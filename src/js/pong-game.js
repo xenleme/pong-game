@@ -156,3 +156,19 @@ function game() {
 let framePerSecond = 50;
 
 let loop = setInterval(game, 1000 / framePerSecond);
+
+const muteSound = document.getElementById('mute-sound');
+const enableSound = document.getElementById('enable-sound');
+
+function enableMute() {
+  hit.muted = true;
+  wall.muted = true;
+}
+
+function disableMute() {
+  hit.muted = false;
+  wall.muted = false;
+}
+
+muteSound.addEventListener('click', enableMute);
+enableSound.addEventListener('click', disableMute);
