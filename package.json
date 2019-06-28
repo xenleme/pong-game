@@ -1,0 +1,19 @@
+{
+  "name": "pong-game",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "devserver": "live-server"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/xenleme/pong-game.git"
+  },
+  "author": "",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/xenleme/pong-game/issues"
+  },
+  "homepage": "https://github.com/xenleme/pong-game#readme"
+}
