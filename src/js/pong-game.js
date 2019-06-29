@@ -107,7 +107,7 @@ function update() {
   ball.x += ball.velocityX;
   ball.y += ball.velocityY;
 
-  computer.y += (ball.y - (computer.y + computer.height / 2)) * 0.1;
+  computer.y += (ball.y - (computer.y + computer.height / 4)) * 0.1;
 
   if (ball.y - ball.radius < 0 || ball.y + ball.radius > canvas.height) {
     ball.velocityY = -ball.velocityY;
@@ -157,18 +157,18 @@ let framePerSecond = 50;
 
 let loop = setInterval(game, 1000 / framePerSecond);
 
-const muteSound = document.getElementById('mute-sound');
-const enableSound = document.getElementById('enable-sound');
+const soundControl = document.getElementById('soundControl');
 
-function enableMute() {
-  hit.muted = true;
-  wall.muted = true;
+function controlMute() {
+  if (!hit.muted && !wall.muted) {
+    hit.muted = true;
+    wall.muted = true;
+    soundControl.innerHTML = '🔇';
+  } else {
+    hit.muted = false;
+    wall.muted = false;
+    soundControl.innerHTML = '🔈';
+  }
 }
 
-function disableMute() {
-  hit.muted = false;
-  wall.muted = false;
-}
-
-muteSound.addEventListener('click', enableMute);
-enableSound.addEventListener('click', disableMute);
+soundControl.addEventListener('click', controlMute);
