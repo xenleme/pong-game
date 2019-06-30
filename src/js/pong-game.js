@@ -111,13 +111,21 @@ function update() {
 
   if (ball.y - ball.radius < 0 || ball.y + ball.radius > canvas.height) {
     ball.velocityY = -ball.velocityY;
-    wall.play();
+
+    const play = wall.play();
+    if (play) {
+      play.catch(error => console.error(error));
+    }
   }
 
   let player = ball.x + ball.radius < canvas.width / 2 ? user : computer;
 
   if (collision(ball, player)) {
-    hit.play();
+    const play = hit.play();
+    if (play) {
+      play.catch(error => console.error(error));
+    }
+
     let collidePoint = ball.y - (player.y + player.height / 2);
     collidePoint = collidePoint / (player.height / 2);
 
