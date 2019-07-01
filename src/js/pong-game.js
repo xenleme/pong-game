@@ -163,8 +163,6 @@ function game() {
 
 let framePerSecond = 50;
 
-let loop = setInterval(game, 1000 / framePerSecond);
-
 const soundControl = document.getElementById('soundControl');
 
 function controlMute() {
@@ -180,3 +178,18 @@ function controlMute() {
 }
 
 soundControl.addEventListener('click', controlMute);
+
+let startBtnIsClicked = false;
+
+const startBtn = document.getElementById('startBtn');
+
+function startGame() {
+  startBtnIsClicked = true;
+
+  if (startBtnIsClicked) {
+    setInterval(game, 1000 / framePerSecond);
+    startBtn.style.display = 'none';
+  }
+}
+
+startBtn.addEventListener('click', startGame);
