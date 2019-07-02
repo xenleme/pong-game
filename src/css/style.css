@@ -1,0 +1,37 @@
+body {
+  background-color: #121212;
+  font-family: Helvetica, sans-serif;
+}
+
+#pong {
+  border: 3px solid #fff;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+#startBtn {
+  color: white;
+  font-size: 26px;
+  text-transform: uppercase;
+  padding: 8px;
+  vertical-align: super;
+  border: 3px solid #fff;
+  transition: all 0.2s;
+}
+
+#startBtn:hover {
+  background-color: #fff;
+  color: #000;
+}
+
+#soundControl {
+  display: inline-block;
+  font-size: 56px;
+  padding: 17px 30px;
+}
+
+span {
+  cursor: pointer;
+}
