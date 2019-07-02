@@ -179,8 +179,6 @@ function controlMute() {
 
 soundControl.addEventListener('click', controlMute);
 
-let startBtnIsClicked = false;
-
 const startBtn = document.getElementById('startBtn');
 
 function startGame() {
