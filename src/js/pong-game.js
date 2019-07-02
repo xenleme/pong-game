@@ -107,7 +107,7 @@ function update() {
   ball.x += ball.velocityX;
   ball.y += ball.velocityY;
 
-  computer.y += (ball.y - (computer.y + computer.height / 4)) * 0.1;
+  computer.y += (ball.y - (computer.y + computer.height / 3.1)) * 0.1;
 
   if (ball.y - ball.radius < 0 || ball.y + ball.radius > canvas.height) {
     ball.velocityY = -ball.velocityY;
@@ -140,7 +140,7 @@ function update() {
 }
 
 function render() {
-  drawRect(0, 0, canvas.width, canvas.height, '#2e2c29');
+  drawRect(0, 0, canvas.width, canvas.height, '#1c1c1b');
   drawText(user.score, canvas.width / 6, canvas.height / 5);
   drawText(computer.score, (3 * canvas.width) / 4, canvas.height / 5);
   drawNet();
@@ -179,15 +179,15 @@ function controlMute() {
 
 soundControl.addEventListener('click', controlMute);
 
-const startBtn = document.getElementById('startBtn');
+const gameTitle = document.getElementById('gameTitle');
 
 function startGame() {
-  startBtnIsClicked = true;
+  canvasIsClicked = true;
 
-  if (startBtnIsClicked) {
+  if (canvasIsClicked) {
     setInterval(game, 1000 / framePerSecond);
-    startBtn.style.display = 'none';
+    gameTitle.style.display = 'none';
   }
 }
 
-startBtn.addEventListener('click', startGame);
+canvas.addEventListener('click', startGame);
